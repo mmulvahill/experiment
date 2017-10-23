@@ -77,7 +77,7 @@ randomize <- function(data, group = c("Treat", "Control"), ratio =
       X <- model.matrix(tm, data = data)
       block <- mahalanobis(X, apply(X, 2, mean), var(X))
     } else {
-      block <- eval(call$block, envir = data)
+      block <- eval(block, envir = data)
     }
   } else { ## matching
     if (m != 2)
